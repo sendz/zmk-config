@@ -15,6 +15,13 @@
   // 21 backlight + 6 glowlight
 };
 
+/ {
+    chosen {
+        zmk,underglow = &led_strip;
+    };
+};
+
+
 #define DEFAULT 0
 #define LOWER 1
 #define RAISE 2
@@ -79,10 +86,4 @@
                         >;
                 };
         };
-};
-
-/ {
-    chosen {
-        zmk,underglow = &led_strip;
-    };
 };
