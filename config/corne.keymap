@@ -7,6 +7,13 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/rgb.h>
+
+&led_strip {
+  // chain-length = <0>;
+  chain-length = <27>;
+  // 21 backlight + 6 glowlight
+};
 
 #define DEFAULT 0
 #define LOWER 1
@@ -72,4 +79,10 @@
                         >;
                 };
         };
+};
+
+/ {
+    chosen {
+        zmk,underglow = &led_strip;
+    };
 };
